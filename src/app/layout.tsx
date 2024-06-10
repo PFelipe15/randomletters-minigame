@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
   import { cn } from "@/lib/utils"
-  import { Inter as FontSans } from "next/font/google"
-const fontSans = FontSans({
+  import { Zilla_Slab } from "next/font/google";
+ const pixel = Zilla_Slab({
   subsets: ["latin"],
   variable: "--font-sans",
+  weight:['300','400','500']
 })
 export const metadata: Metadata = {
   title: "Random Letters",
@@ -20,8 +21,8 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          "min-h-screen bg-background  antialiased",
+          pixel.className
         )}
       >
         {children}
