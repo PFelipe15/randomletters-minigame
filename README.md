@@ -16,21 +16,46 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# MiniGame: Random Letter
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+O mini game "Random Letter" desafia os jogadores a pressionar as teclas corretas conforme uma sequência aleatória de letras é exibida na tela. O objetivo é acertar o máximo de letras possível dentro do limite de tempo estabelecido.
 
-## Learn More
+## Descrição do Jogo
 
-To learn more about Next.js, take a look at the following resources:
+O jogador será apresentado a uma sequência de letras aleatórias que aparecem na tela. Cada letra será exibida por um período de tempo limitado. O jogador deve pressionar a tecla correspondente à letra exibida antes que ela desapareça. O jogo mantém um registro do histórico de partidas e exibe um ranking dos melhores jogadores.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Funcionalidades
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Tempo Limite:** O jogo possui um tempo limite, e o jogador deve tentar acertar o máximo de letras dentro desse tempo.
+- **Pontuação:** O jogador ganha pontos por cada letra que acertar.
+- **Recorde de Pontuação:** Mantém o registro da pontuação mais alta alcançada pelo jogador.
+- **Sequências Difíceis:** Em níveis mais difíceis, o jogador pode enfrentar sequências mais longas.
+- **Histórico de Jogos:** O jogo mantém um histórico das partidas anteriores, incluindo o nome do jogador, pontuação e data.
+- **Ranking:** Exibe um ranking dos melhores jogadores com base na pontuação mais alta.
+- **Escolha de Dificuldade:** O jogador pode escolher a dificuldade do jogo, afetando a complexidade das sequências apresentadas.
+- **Personalização de Nome:** Permite ao jogador inserir seu nome antes de iniciar a partida.
 
-## Deploy on Vercel
+## Funcionalidades de Controle
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Tecla de Letra:** Pressione a tecla correspondente à letra exibida na tela.
+- **Reiniciar:** Permite reiniciar o jogo a qualquer momento.
+- **Voltar:** Volta para a tela anterior ou menu principal do jogo.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Componentes e Hooks Utilizados
+
+- **useState:** Para controlar o estado do jogo, como a sequência de letras, pontuação, etc.
+- **useEffect:** Utilizado para lidar com efeitos colaterais, como controle de tempo e eventos do teclado.
+- **Progress Component:** Componente para exibir a barra de progresso do tempo restante.
+- **lucide-react:** Utilizado para exibir ícones.
+
+## Como Jogar
+
+1. Ao iniciar o jogo, o jogador pode inserir seu nome e escolher a dificuldade.
+2. Uma sequência de letras aleatórias é apresentada na tela.
+3. Pressione a tecla correspondente à letra exibida o mais rápido possível.
+4. Continue pressionando as teclas corretas para ganhar pontos.
+5. O jogo termina quando o tempo acabar ou se você pressionar a tecla errada.
+6. Se você conseguir uma pontuação alta, seu nome será exibido no ranking.
+7. Tente bater seu próprio recorde e subir no ranking!
+
+Divirta-se jogando o mini game "Random Letter" e teste seus reflexos e agilidade!
