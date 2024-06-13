@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Progress } from "@/components/ui/progress";
 import { User } from 'lucide-react';
 import { Dispatch, SetStateAction } from 'react';
-
+ 
 interface StartProps {
   playerName: string;
   onBack: () => void;
@@ -19,8 +19,8 @@ interface GameHistory {
   score: number;
   highScore: number;
   date: string;
+  difficulty: string;   
 }
-
 export default function Start({
   playerName,
   onBack,
@@ -43,7 +43,8 @@ export default function Start({
   const [gameHistory, setGameHistory] = useState<GameHistory[]>([]);
   const lettersArray = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
   const timeRef = useRef<NodeJS.Timeout | null>(null);
-  const progressRef = useRef<NodeJS.Timeout | null>(null);
+  const progressRef = useRef<NodeJS.Timeout | null | undefined>(null);
+  const audioRef = useRef();
 
   useEffect(() => {
  
